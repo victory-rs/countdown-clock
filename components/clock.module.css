@@ -7,8 +7,9 @@
      border-radius: 5px;
      outline: 15px solid white;
      background-color: #333;
-     width: calc(var(--width) * 4.5vh);
-     height: calc(var(--height) * 4.0vh);
+     width: 90vw;
+     /* aspect-ratio: 1.77; */
+     min-width: 350px;
      display:flex;
      flex-direction: column;
      justify-content: center;
@@ -17,17 +18,17 @@
      display: flex;
      flex-direction: row;
      width:auto;
-     justify-content: space-between;
+     justify-content: center;
  }
 
  .dot {
      padding:0;
      margin:1px;
      background-color: #111;
-     width:15px;
-     height:15px;
-     /* width: calc(55vw / var(--width));
-     height: calc(55vw / var(--width)); */
+     /* width:15px;
+     height:15px; */
+     width: calc(90vw / var(--width));
+     height: calc(90vw / var(--width));
      text-align: center;
      border-radius: 100%;
  }
