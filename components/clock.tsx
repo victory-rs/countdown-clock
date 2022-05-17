@@ -10,7 +10,7 @@ const Clock: React.FC<{ width: number, height: number, urgent: boolean, pattern:
         }
         clockDots.push(<div key={y} className={styles.row}>{row}</div>);
     }
-    return <div className={styles.container} style={{ '--width': props.width + 2, '--height': props.height + 2 } as React.CSSProperties} >{clockDots}</div>
+    return <div className={`${styles.container} ${props.urgent ? styles.urgentBorder : ''}`} style={{ '--width': props.width + 2, '--height': props.height + 2 } as React.CSSProperties} >{clockDots}</div>
 }
 
 export default Clock;

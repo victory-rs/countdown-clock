@@ -16,7 +16,7 @@ const Timer: React.FC = () => {
     return !countdown ?
         <ScrollText width={width} height={height} text="victory.rs" speed={50} direction="left" />
         :
-        <Countdown width={width} height={height} seconds={20} />
+        <Countdown width={width} height={height} seconds={3} />
 
 }
 

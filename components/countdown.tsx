@@ -13,7 +13,6 @@ const Countdown: React.FC<countdownProps> = (props) => {
     const [seconds, setSeconds] = useState(props.seconds);
     const [playBuzzer] = useSound('buzzer.mp3', { onload: () => { console.log('ucitao se?') } });
     useEffect(() => {
-        setSeconds(props.seconds);
         let initialTime = new Date().getTime();
         let stop = false;
         const cb = () => {
