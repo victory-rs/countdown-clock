@@ -1,0 +1,41 @@
+ .editor {
+     display:flex;
+     flex-direction: row;
+ }
+ .container {
+     
+     border-radius: 5px;
+     outline: 15px solid white;
+     background-color: #333;
+     width: calc(var(--width) * 4.5vh);
+     height: calc(var(--height) * 4.0vh);
+     display:flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+ .row {
+     display: flex;
+     flex-direction: row;
+     width:auto;
+     justify-content: space-between;
+ }
+
+ .dot {
+     padding:0;
+     margin:1px;
+     background-color: #111;
+     width:15px;
+     height:15px;
+     /* width: calc(55vw / var(--width));
+     height: calc(55vw / var(--width)); */
+     text-align: center;
+     border-radius: 100%;
+ }
+
+ .normal {
+     background-color: #ee5c25;
+ }
+
+.urgent {
+     background-color: red;
+ }
