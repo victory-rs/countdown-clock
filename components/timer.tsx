@@ -16,6 +16,14 @@ const Timer: React.FC = () => {
     })
     useEffect(() => {
         let lastClick = 0;
+        const kbcb = (c: any) => {
+            return (e: any) => {
+                //on space
+                if (e.keyCode === 32) {
+                    c();
+                }
+            }
+        };
         const cb = () => {
             const currentClick = new Date().getTime();
             if (currentClick - lastClick < 800) {
@@ -36,6 +44,7 @@ const Timer: React.FC = () => {
             }
         };
         document.addEventListener("click", cb);
+        document.addEventListener("keydown", kbcb(cb));
         return () => {
             document.removeEventListener("click", cb);
         }
@@ -43,7 +52,7 @@ const Timer: React.FC = () => {
     return !countdown ?
         <ScrollText width={width} height={height} text="q  victory.rs  q" speed={50} direction="left" />
         :
-        <Countdown width={width} height={height} seconds={60} />
+        <Countdown width={width} height={height} seconds={30} />
 
 }
 
