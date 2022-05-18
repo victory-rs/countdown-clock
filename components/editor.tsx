@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Editor: React.FC = () => {
     const clockDots = [];
-    const [pattern, setPattern] = useState<boolean[][]>(createPattern(7, 12));
+    const [pattern, setPattern] = useState<boolean[][]>(createPattern(40, 12));
     for (let y = 0; y < pattern[0].length; y++) {
         let row = [];
         for (let x = 0; x < pattern.length; x++) {
@@ -19,9 +19,10 @@ const Editor: React.FC = () => {
         }
         clockDots.push(<div key={y} className={styles.row}>{row}</div>);
     }
+
     return <div className={styles.editor}>
-        <div className={styles.container} style={{ '--width': 7 + 2, '--height': 12 + 2 } as React.CSSProperties} >{clockDots}</div>
-        <button onClick={() => {
+        <div className={styles.container} style={{ '--width': 40 + 2, '--height': 12 + 2 } as React.CSSProperties} >{clockDots}</div>
+        <button style={{ margin: "30px" }} onClick={() => {
             let text = '';
             for (let y = 0; y < pattern[0].length; y++) {
                 if (y > 0) text += '\n';
@@ -29,11 +30,10 @@ const Editor: React.FC = () => {
                     text += pattern[x][y] ? '*' : ' ';
                 }
             }
-            // const text = pattern.map(c => c.map(b => b ? "*" : " ").join("\n")).join("");
             navigator.clipboard.writeText(text);
         }}>Copy</button>
+    </div >
 
-    </div>
 }
 
 export default Editor;

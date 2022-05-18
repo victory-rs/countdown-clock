@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Countdown from "./countdown";
+import Editor from "./editor";
 import ScrollText from "./scrollText";
 
 const Timer: React.FC = () => {
@@ -14,9 +15,9 @@ const Timer: React.FC = () => {
         });
     }, [countdown, setCountdown]);
     return !countdown ?
-        <ScrollText width={width} height={height} text="victory.rs" speed={50} direction="left" />
+        <ScrollText width={width} height={height} text="victory.rs  q" speed={50} direction="left" />
         :
-        <Countdown width={width} height={height} seconds={3} />
+        <Countdown width={width} height={height} seconds={20} />
 
 }
 

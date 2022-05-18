@@ -245,6 +245,19 @@ export const s = ` ****
      * 
 *    * 
  ****  `;
+
+export const victory = `                                        
+                                        
+                *****                   
+        ******   ***   ******           
+         ******   *   ******            
+          ******     ******             
+              ***   ***                 
+               *** ***                  
+                *****                   
+                 ***                    
+                  *                     
+                                        `;
 export const letters = {
   v,
   i,
@@ -254,6 +267,7 @@ export const letters = {
   r,
   y,
   s,
+  q: victory,
   "0": zero,
   "1": one,
   "2": two,
@@ -277,6 +291,7 @@ export const widths = {
   r: 8,
   y: 8,
   s: 7,
+  q: 40,
   "0": 8,
   "1": 8,
   "2": 8,
