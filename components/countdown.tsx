@@ -11,7 +11,9 @@ export type countdownProps = {
 
 const Countdown: React.FC<countdownProps> = (props) => {
     const [seconds, setSeconds] = useState(props.seconds);
-    const [playBuzzer] = useSound('buzzer.mp3', { onload: () => { console.log('ucitao se?') } });
+    const [beepTime, setBeepTime] = useState(10.5);
+    const [playBuzzer] = useSound('buzzer.mp3');
+    const [playBeep] = useSound('beep.mp3');
     useEffect(() => {
         let initialTime = new Date().getTime();
         let stop = false;
@@ -34,6 +36,12 @@ const Countdown: React.FC<countdownProps> = (props) => {
         requestAnimationFrame(cb);
         return () => { stop = true }
     }, [props.seconds, playBuzzer]);
+
+    if (beepTime > 0 && seconds <= beepTime) {
+        playBeep();
+        setBeepTime(old => old === 10.5 ? 9 : old - 1)
+    }
+
 
     const pattern = createPattern(props.width, props.height);
     const displayText = seconds > 10 ? Math.round(seconds).toString() : seconds.toFixed(1);
